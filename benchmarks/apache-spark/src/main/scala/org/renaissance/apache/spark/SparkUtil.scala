@@ -29,6 +29,7 @@ trait SparkUtil {
       .set("spark.driver.bindAddress", "127.0.0.1")
       .set("spark.executor.instances", "4")
       .set("spark.sql.warehouse.dir", dirPath.resolve("warehouse").toString)
+      .set("spark.network.timeout", "30d")
     val sc = new SparkContext(conf)
     sc.setLogLevel("ERROR")
     sc
